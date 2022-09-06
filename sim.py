@@ -146,7 +146,7 @@ def runsim(parameter,ti,dst,path,template,sampler):
 		if(idx%(path.size//100)==0):
 			print(idx*100//path.size," %");
 		source*=numpy.nan;
-		source[max(0,x-hx)-(x-hx):min(dst.shape[0]-1,x+hx)-x+hx+1,max(0,y-hy)-(y-hy):min(dst.shape[0]-1,y+hy)-y+hy+1]=\
+		source[max(0,x-hx)-(x-hx):min(dst.shape[0]-1,x+hx)-x+hx+1,max(0,y-hy)-(y-hy):min(dst.shape[1]-1,y+hy)-y+hy+1]=\
 			dst[max(0,x-hx):min(dst.shape[0],x+hx)+1,max(0,y-hy):min(dst.shape[1],y+hy)+1];
 		
 		simIndex=sampler(parameter,source,template);
